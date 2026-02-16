@@ -1,0 +1,287 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap');
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+.font-pacifico {
+    font-family: 'Pacifico', cursive;
+}
+
+/* Floating Hearts Animation */
+.heart {
+    position: fixed;
+    bottom: -50px;
+    font-size: 2rem;
+    color: #ff69b4;
+    animation: float-up 8s linear infinite;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes float-up {
+    0% {
+        bottom: -50px;
+        opacity: 0;
+        transform: translateX(0) rotate(0deg);
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        bottom: 100vh;
+        opacity: 0;
+        transform: translateX(50px) rotate(360deg);
+    }
+}
+
+.heart:nth-child(2) { 
+    left: 10%; 
+    animation-delay: 0s; 
+    animation-duration: 7s; 
+}
+
+.heart:nth-child(3) { 
+    left: 25%; 
+    animation-delay: 2s; 
+    animation-duration: 9s; 
+}
+
+.heart:nth-child(4) { 
+    left: 40%; 
+    animation-delay: 1s; 
+    animation-duration: 8s; 
+}
+
+.heart:nth-child(5) { 
+    left: 55%; 
+    animation-delay: 3s; 
+    animation-duration: 7.5s; 
+}
+
+.heart:nth-child(6) { 
+    left: 70%; 
+    animation-delay: 1.5s; 
+    animation-duration: 8.5s; 
+}
+
+.heart:nth-child(7) { 
+    left: 85%; 
+    animation-delay: 2.5s; 
+    animation-duration: 9s; 
+}
+
+/* Fade In Animation */
+.fade-in {
+    animation: fadeIn 1.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(30px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+/* Bounce Animation */
+.bounce {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { 
+        transform: translateY(0); 
+    }
+    40% { 
+        transform: translateY(-20px); 
+    }
+    60% { 
+        transform: translateY(-10px); 
+    }
+}
+
+/* Photo Frame Hover Effect */
+.photo-frame {
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.photo-frame:hover {
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 20px 40px rgba(255, 105, 180, 0.4);
+}
+
+.photo-frame::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transform: rotate(45deg);
+    transition: all 0.5s;
+}
+
+.photo-frame:hover::before {
+    left: 100%;
+}
+
+/* Music Player Styles */
+.music-player {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease;
+}
+
+.music-player:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(255, 105, 180, 0.3);
+}
+
+.play-btn {
+    transition: all 0.3s ease;
+}
+
+.play-btn:hover {
+    transform: scale(1.1);
+}
+
+.play-btn.playing {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { 
+        transform: scale(1); 
+    }
+    50% { 
+        transform: scale(1.1); 
+    }
+}
+
+/* Sparkle Effect */
+.sparkle {
+    animation: sparkle 2s infinite;
+}
+
+@keyframes sparkle {
+    0%, 100% { 
+        opacity: 1; 
+        transform: scale(1); 
+    }
+    50% { 
+        opacity: 0.5; 
+        transform: scale(0.8); 
+    }
+}
+
+/* Gradient Text */
+.gradient-text {
+    background: linear-gradient(135deg, #ff69b4, #ff1493, #ff69b4);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient-shift 3s ease infinite;
+}
+
+@keyframes gradient-shift {
+    0%, 100% { 
+        background-position: 0% 50%; 
+    }
+    50% { 
+        background-position: 100% 50%; 
+    }
+}
+
+/* Confetti */
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background: #ff69b4;
+    top: -10px;
+    z-index: 0;
+    animation: confetti-fall 4s linear infinite;
+}
+
+@keyframes confetti-fall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+.confetti:nth-child(odd) { 
+    background: #ff1493; 
+}
+
+.confetti:nth-child(3n) { 
+    background: #ffc0cb; 
+}
+
+.confetti:nth-child(4n) { 
+    background: #ffffff; 
+}
+
+/* Fade Out Animation for Fireworks */
+@keyframes fadeOut {
+    from { 
+        opacity: 1; 
+        transform: scale(1); 
+    }
+    to { 
+        opacity: 0; 
+        transform: scale(2); 
+    }
+}
+
+/* Counter Box Styles */
+.counter-box {
+    transition: all 0.3s ease;
+}
+
+/* Balloon & Candle Hover Effects */
+.balloon-item,
+.candle {
+    transition: all 0.3s ease;
+}
+
+/* Lightbox Styles */
+#lightbox {
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+#lightbox img {
+    animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
